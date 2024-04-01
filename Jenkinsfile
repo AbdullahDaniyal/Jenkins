@@ -32,7 +32,7 @@ pipeline {
 
         stage('Docker Compose Up') {
             steps {
-                echo 'Starting Docker Compose...'
+                sh 'sleep 2m'
                 
                 echo 'docker compose up -d'
             }
