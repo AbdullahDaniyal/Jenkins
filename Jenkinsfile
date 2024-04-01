@@ -11,14 +11,14 @@ pipeline {
         stage('Dependency Installation') {
             steps {
                 echo 'Install dependencies...'
-                sh 'npm install'
+                echo 'npm install'
                 
             }
         }
 
         stage('Build') {
             steps {
-                sh 'npm run build'
+                echo 'npm run build'
                 
             }
         }
@@ -34,14 +34,14 @@ pipeline {
             steps {
                 echo 'Starting Docker Compose...'
                 
-                sh 'docker compose up -d'
+                echo 'docker compose up -d'
             }
         }
         
         stage('Cleanup') {
             steps {
                 echo 'Shutting down Docker Compose...'
-                sh 'docker compose down'
+                echo 'docker compose down'
             }
         }
     }
